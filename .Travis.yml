@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.10"
+
+services:
+  - docker
+
+before_install:
+  - echo "MADE BY ULTRA BHAI.."
+
+install:
+  - pip install --upgrade pip
+  - pip install telebot pymongo aiohttp psutil pytz
+
+script:
+  - g++ -std=c++14 soulcracks.cpp -o soul -pthread
+  - chmod +x soul
+  - python3 soul.py
